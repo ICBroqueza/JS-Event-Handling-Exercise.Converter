@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter</title>
+    <style>
+      div {
+        width: 175px;
+        border: 1px solid #333;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        margin: 10px 0;
+        border-radius: 15px;
+        cursor: pointer;
+        border: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="inputNum" type="text" placeholder="Enter number in °C" />
+    <br />
+    <button id="convertBtn">CONVERT</button>
+    <div id="result">Result in °F</div>
+    <script>
+      document.getElementById('convertBtn').onclick = function () {
+        const farenheit = document.getElementById('result');
+        const celsius = document.getElementById('inputNum').value;
+
+        const formula = (celsius * 9) / 5 + 32;
+
+        farenheit.innerText = formula;
+      };
+    </script>
+  </body>
+</html>
